@@ -1,0 +1,43 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>me.bytebeats.ipg.xmlsorter</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Android Resource Sorter</name>
+
+    <idea-version since-build="191.0"/>
+    <version>0.1.0</version>
+
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="happychinapc@gmail.com" url="https://github.com/bytebeats">bytebeats</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    An IntelliJ & Android Studio plugin to sort xml resource whose attributes hav named item "name" alphabetically<br>
+
+    'Editor > PopupMenu(Right Click) > Refactor > Sort Resource by name'<br/>
+    Or press **Control + [Shift] + S**(MacOS) and **Ctrl + [Shift] + S**(Windows)<br/>
+
+    Options<br/>
+      - Support for inserting space between different prefixes.<br/>
+      - Support for inserting version and encoding.<br/>
+      - Support for deleting comments.<br/>
+      - Support for configuring indent number.
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.xml</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+</idea-plugin>
