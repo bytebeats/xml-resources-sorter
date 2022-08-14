@@ -5,18 +5,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.apache.commons.io.input.XmlStreamReader;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
-import java.io.IOException;
+import static me.bytebeats.ipg.xmlsorter.VirtualFilesKt.isResourceFile;
 
 public class SortXmlAction extends AnAction {
 
@@ -32,29 +25,5 @@ public class SortXmlAction extends AnAction {
         final Project project = getEventProject(e);
         final Editor editor = e.getData(PlatformDataKeys.EDITOR);
         // TODO: 2022/8/14 pop up dialog here
-    }
-
-    private static boolean isResourceFile(@Nullable VirtualFile file) {
-        if (file == null || !file.getName().endsWith(".xml")) return false;
-        XMLStreamReader reader = null;
-        try {
-            reader = XMLInputFactory.newFactory().createXMLStreamReader(file.getInputStream());
-            while (reader.hasNext()) {
-                if (reader.next() == XMLStreamConstants.START_ELEMENT) {
-                    return "resources".equals(reader.getLocalName());
-                }
-            }
-        } catch (XMLStreamException | IOException e) {
-            return false;
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (XMLStreamException ignore) {
-
-                }
-            }
-        }
-        return false;
     }
 }

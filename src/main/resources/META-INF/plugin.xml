@@ -41,7 +41,15 @@
 
     </extensions>
     <actions>
-        <action id="SortXmlAction" class="me.bytebeats.ipg.xmlsorter.SortXmlAction" text="Sort Resource by Name"
-                description="Sort resource xml file by name"/>
+        <action id="SortXmlAction" class="me.bytebeats.ipg.xmlsorter.SortXmlAction"
+                text="Sort Resource by Name" description="Sort resource file by name">
+            <add-to-group group-id="RefactoringMenu" anchor="first"/>
+            <keyboard-shortcut first-keystroke="meta L" keymap="$default"/>
+        </action>
+        <action id="InstantSortXmlAction" class="me.bytebeats.ipg.xmlsorter.DirectSortXmlAction"
+                text="Direct Sort Resource by Name" description="Sort resource file by name directly">
+            <add-to-group group-id="RefactoringMenu" anchor="first"/>
+            <keyboard-shortcut first-keystroke="alt meta L" keymap="$default"/>
+        </action>
     </actions>
 </idea-plugin>
