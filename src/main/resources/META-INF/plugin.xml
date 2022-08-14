@@ -40,4 +40,8 @@
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
+    <actions>
+        <action id="SortXmlAction" class="me.bytebeats.ipg.xmlsorter.SortXmlAction" text="Sort Resource by Name"
+                description="Sort resource xml file by name"/>
+    </actions>
 </idea-plugin>
