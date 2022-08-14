@@ -2,7 +2,7 @@ package me.bytebeats.ipg.xmlsorter
 
 import org.w3c.dom.Node
 
-data class CommentedNode(val node: Node, val comments: List<Node>) {
+data class CommentedNode(val node: Node, val comments: List<Node>?) {
     internal class Comparator(private val separateNonTranslatable: Boolean) : kotlin.Comparator<CommentedNode> {
         override fun compare(o1: CommentedNode, o2: CommentedNode): Int {
             val node1 = o1.node
