@@ -7,6 +7,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import me.bytebeats.ipg.xmlsorter.action.AbstractSortXmlAction;
+import me.bytebeats.ipg.xmlsorter.dialog.SortOptionDialog;
 import org.jetbrains.annotations.NotNull;
 
 import static me.bytebeats.ipg.xmlsorter.VirtualFilesKt.isResourceFile;
@@ -24,6 +25,29 @@ public class SortXmlAction extends AbstractSortXmlAction {
     public void actionPerformed(@NotNull AnActionEvent e) {
         final Project project = getEventProject(e);
         final Editor editor = e.getData(PlatformDataKeys.EDITOR);
-        // TODO: 2022/8/14 pop up dialog here
+        if (project == null || editor == null) return;
+        SortOptionDialog dialog = new SortOptionDialog(project);
+        if (!dialog.showAndGet()) return;
+        // options
+        boolean insertSpaceEnabled = dialog.isInsertSpaceEnabled();
+        boolean isSnakeCase = true;
+        int prefixSpaceLocation = 0;
+        if (insertSpaceEnabled) {
+            isSnakeCase = dialog.isSnakeCase();
+            prefixSpaceLocation = dialog.getPrefixSpaceLocation();
+        }
+        boolean insertXmlInfoEnabled = dialog.isInsertXmlInfoEnabled();
+        boolean deleteCommentsEnabled = dialog.isDeleteCommentsEnabled();
+        int indent = dialog.getIndent();
+        boolean separateNonTranslatable = dialog.isSeparateNonTranslatableStringsEnabled();
+        execute(project,
+                editor,
+                isSnakeCase,
+                prefixSpaceLocation,
+                insertSpaceEnabled,
+                insertXmlInfoEnabled,
+                deleteCommentsEnabled,
+                indent,
+                separateNonTranslatable);
     }
 }
