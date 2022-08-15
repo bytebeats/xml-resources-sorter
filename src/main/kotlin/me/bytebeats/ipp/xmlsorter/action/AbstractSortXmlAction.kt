@@ -1,10 +1,10 @@
-package me.bytebeats.ipg.xmlsorter.action
+package me.bytebeats.ipp.xmlsorter.action
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
-import me.bytebeats.ipg.xmlsorter.*
+import me.bytebeats.ipp.xmlsorter.*
 import org.w3c.dom.Document
 import java.io.IOException
 

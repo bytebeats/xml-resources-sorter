@@ -1,12 +1,12 @@
-package me.bytebeats.ipg.xmlsorter.action.impl;
+package me.bytebeats.ipp.xmlsorter.action.impl;
 
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
-import me.bytebeats.ipg.xmlsorter.action.AbstractSortXmlAction;
-import me.bytebeats.ipg.xmlsorter.dialog.SortOptionDialog;
+import me.bytebeats.ipp.xmlsorter.action.AbstractSortXmlAction;
+import me.bytebeats.ipp.xmlsorter.dialog.SortOptionDialog;
 import org.jetbrains.annotations.NotNull;
 
 public class DirectSortXmlAction extends AbstractSortXmlAction {

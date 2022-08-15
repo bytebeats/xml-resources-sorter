@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-    <id>me.bytebeats.ipg.xmlsorter</id>
+    <id>me.bytebeats.ipp.xmlsorter</id>
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
@@ -41,12 +41,12 @@
 
     </extensions>
     <actions>
-        <action id="SortXmlAction" class="me.bytebeats.ipg.xmlsorter.action.impl.SortXmlAction"
+        <action id="SortXmlAction" class="me.bytebeats.ipp.xmlsorter.action.impl.SortXmlAction"
                 text="Sort Resource by Name" description="Sort resource file by name">
             <add-to-group group-id="RefactoringMenu" anchor="first"/>
             <keyboard-shortcut first-keystroke="meta L" keymap="$default"/>
         </action>
-        <action id="InstantSortXmlAction" class="me.bytebeats.ipg.xmlsorter.action.impl.DirectSortXmlAction"
+        <action id="InstantSortXmlAction" class="me.bytebeats.ipp.xmlsorter.action.impl.DirectSortXmlAction"
                 text="Direct Sort Resource by Name" description="Sort resource file by name directly">
             <add-to-group group-id="RefactoringMenu" anchor="first"/>
             <keyboard-shortcut first-keystroke="alt meta L" keymap="$default"/>

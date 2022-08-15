@@ -1,4 +1,4 @@
-package me.bytebeats.ipg.xmlsorter.action.impl;
+package me.bytebeats.ipp.xmlsorter.action.impl;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -6,11 +6,11 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import me.bytebeats.ipg.xmlsorter.action.AbstractSortXmlAction;
-import me.bytebeats.ipg.xmlsorter.dialog.SortOptionDialog;
+import me.bytebeats.ipp.xmlsorter.action.AbstractSortXmlAction;
+import me.bytebeats.ipp.xmlsorter.dialog.SortOptionDialog;
 import org.jetbrains.annotations.NotNull;
 
-import static me.bytebeats.ipg.xmlsorter.VirtualFilesKt.isResourceFile;
+import static me.bytebeats.ipp.xmlsorter.VirtualFilesKt.isResourceFile;
 
 public class SortXmlAction extends AbstractSortXmlAction {
 

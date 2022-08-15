@@ -1,4 +1,4 @@
-package me.bytebeats.ipg.xmlsorter
+package me.bytebeats.ipp.xmlsorter
 
 import org.w3c.dom.Node
 
