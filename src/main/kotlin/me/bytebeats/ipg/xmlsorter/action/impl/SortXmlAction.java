@@ -21,7 +21,7 @@ public class SortXmlAction extends AbstractSortXmlAction {
     }
 
     @Override
-    public void actionPerformed(AnActionEvent e) {
+    public void actionPerformed(@NotNull AnActionEvent e) {
         final Project project = getEventProject(e);
         final Editor editor = e.getData(PlatformDataKeys.EDITOR);
         // TODO: 2022/8/14 pop up dialog here
