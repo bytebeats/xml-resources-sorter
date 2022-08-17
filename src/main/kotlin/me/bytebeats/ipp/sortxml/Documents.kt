@@ -1,4 +1,4 @@
-package me.bytebeats.ipp.xmlsorter
+package me.bytebeats.ipp.sortxml
 
 import org.w3c.dom.Document
 import org.w3c.dom.Element

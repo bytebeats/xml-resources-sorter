@@ -1,10 +1,10 @@
-package me.bytebeats.ipp.xmlsorter.action
+package me.bytebeats.ipp.sortxml.action
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
-import me.bytebeats.ipp.xmlsorter.*
+import me.bytebeats.ipp.sortxml.*
 import org.w3c.dom.Document
 import java.io.IOException
 
@@ -33,6 +33,7 @@ abstract class AbstractSortXmlAction : AnAction() {
         var commentedNodes = document.toNodeList()
         //sort
         commentedNodes.sortedWith(CommentedNode.Comparator(separateNonTranslatable))
+//        commentedNodes.sortedBy { it.node.attributes.getNamedItem("name").textContent }
         document.deleteChildNodes()
 
         //insert space if enabled

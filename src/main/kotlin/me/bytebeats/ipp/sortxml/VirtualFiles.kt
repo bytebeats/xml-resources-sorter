@@ -1,4 +1,4 @@
-package me.bytebeats.ipp.xmlsorter
+package me.bytebeats.ipp.sortxml
 
 import com.intellij.openapi.vfs.VirtualFile
 import java.io.IOException

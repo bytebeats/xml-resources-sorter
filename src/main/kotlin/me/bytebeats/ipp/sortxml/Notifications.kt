@@ -1,4 +1,4 @@
-package me.bytebeats.ipp.xmlsorter
+package me.bytebeats.ipp.sortxml
 
 import com.intellij.notification.Notification
 import com.intellij.notification.NotificationType
