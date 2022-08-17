@@ -1,10 +1,10 @@
-package me.bytebeats.ipp.sortxml.action
+package me.bytebeats.ipp.xmlres.action
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
-import me.bytebeats.ipp.sortxml.*
+import me.bytebeats.ipp.xmlres.*
 import org.w3c.dom.Document
 import java.io.IOException
 

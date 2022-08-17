@@ -1,4 +1,4 @@
-package me.bytebeats.ipp.sortxml.action;
+package me.bytebeats.ipp.xmlres.action;
 
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -7,7 +7,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 
-import static me.bytebeats.ipp.sortxml.VirtualFilesKt.isXmlResourcesFile;
+import static me.bytebeats.ipp.xmlres.VirtualFilesKt.isXmlResourcesFile;
 
 public class XmlResourcesActionGroup extends DefaultActionGroup {
     @Override

@@ -1,4 +1,4 @@
-package me.bytebeats.ipp.sortxml.dialog;
+package me.bytebeats.ipp.xmlres.dialog;
 
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.project.Project;

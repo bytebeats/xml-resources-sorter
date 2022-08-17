@@ -40,16 +40,16 @@
 
     </extensions>
     <actions>
-        <group id="XmlResourcesActionGroup" class="me.bytebeats.ipp.sortxml.action.XmlResourcesActionGroup"
+        <group id="XmlResourcesActionGroup" class="me.bytebeats.ipp.xmlres.action.XmlResourcesActionGroup"
                text="Sort Xml Resources Actions" icon="AllIcons.FileTypes.Xml" popup="true"
                description="Action Group to sort xml items alphabetically">
             <add-to-group group-id="RefactoringMenu" anchor="first"/>
-            <action id="XmlResourcesAction" class="me.bytebeats.ipp.sortxml.action.impl.XmlResourcesAction"
+            <action id="XmlResourcesAction" class="me.bytebeats.ipp.xmlres.action.impl.XmlResourcesAction"
                     text="Sort Xml Resources by Name" description="Sort xml resources by name">
                 <keyboard-shortcut first-keystroke="alt S" keymap="$default"/>
             </action>
             <action id="XmlResourcesInstantAction"
-                    class="me.bytebeats.ipp.sortxml.action.impl.XmlResourcesInstantAction"
+                    class="me.bytebeats.ipp.xmlres.action.impl.XmlResourcesInstantAction"
                     text="Sort Xml Resources by Name Instantly" description="Sort xml resources by name instantly">
                 <keyboard-shortcut first-keystroke="alt meta S" keymap="$default"/>
             </action>

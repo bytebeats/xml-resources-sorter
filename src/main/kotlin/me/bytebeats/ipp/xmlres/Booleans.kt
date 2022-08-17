@@ -1,3 +1,3 @@
-package me.bytebeats.ipp.sortxml
+package me.bytebeats.ipp.xmlres
 
 fun Boolean?.orFalse():Boolean = this ?: false
