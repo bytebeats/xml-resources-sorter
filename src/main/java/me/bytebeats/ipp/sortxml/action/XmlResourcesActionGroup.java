@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 import static me.bytebeats.ipp.sortxml.VirtualFilesKt.isXmlResourcesFile;
 
-public class SortXmlActionGroup extends DefaultActionGroup {
+public class XmlResourcesActionGroup extends DefaultActionGroup {
     @Override
     public void update(@NotNull AnActionEvent e) {
         super.update(e);

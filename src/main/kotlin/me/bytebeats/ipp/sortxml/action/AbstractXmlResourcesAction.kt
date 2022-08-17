@@ -8,7 +8,7 @@ import me.bytebeats.ipp.sortxml.*
 import org.w3c.dom.Document
 import java.io.IOException
 
-abstract class AbstractSortXmlAction : AnAction() {
+abstract class AbstractXmlResourcesAction : AnAction() {
     protected fun execute(
         project: Project,
         editor: Editor,

@@ -7,13 +7,13 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import me.bytebeats.ipp.sortxml.action.AbstractSortXmlAction;
-import me.bytebeats.ipp.sortxml.dialog.SortOptionDialog;
+import me.bytebeats.ipp.sortxml.action.AbstractXmlResourcesAction;
+import me.bytebeats.ipp.sortxml.dialog.XmlResourcesOptionDialog;
 import org.jetbrains.annotations.NotNull;
 
 import static me.bytebeats.ipp.sortxml.VirtualFilesKt.isXmlResourcesFile;
 
-public class SortXmlInstantAction extends AbstractSortXmlAction {
+public class XmlResourcesInstantAction extends AbstractXmlResourcesAction {
 
     @Override
     public void update(@NotNull AnActionEvent e) {
@@ -32,13 +32,13 @@ public class SortXmlInstantAction extends AbstractSortXmlAction {
         PropertiesComponent pc = PropertiesComponent.getInstance();
         execute(project,
                 editor,
-                pc.getInt(SortOptionDialog.PC_KEY_INPUT_CASE, 0) == 0,
-                SortOptionDialog.getPrefixSpaceLocationValueAt(pc.getInt(SortOptionDialog.PC_KEY_PREFIX_SPACE_LOCATION, 0)),
-                pc.getBoolean(SortOptionDialog.PC_KEY_SPACE_BETWEEN_PREFIX, true),
-                pc.getBoolean(SortOptionDialog.PC_KEY_INSERT_XML_INFO, true),
-                pc.getBoolean(SortOptionDialog.PC_KEY_DELETE_COMMENT, false),
-                SortOptionDialog.getIndentValueAt(pc.getInt(SortOptionDialog.PC_KEY_INDENT, 1)),
-                pc.getBoolean(SortOptionDialog.PC_KEY_SEPARATE_NON_TRANSLATABLE, false)
+                pc.getInt(XmlResourcesOptionDialog.PC_KEY_INPUT_CASE, 0) == 0,
+                XmlResourcesOptionDialog.getPrefixSpaceLocationValueAt(pc.getInt(XmlResourcesOptionDialog.PC_KEY_PREFIX_SPACE_LOCATION, 0)),
+                pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_SPACE_BETWEEN_PREFIX, true),
+                pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_INSERT_XML_INFO, true),
+                pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_DELETE_COMMENT, false),
+                XmlResourcesOptionDialog.getIndentValueAt(pc.getInt(XmlResourcesOptionDialog.PC_KEY_INDENT, 1)),
+                pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_SEPARATE_NON_TRANSLATABLE, false)
         );
     }
 }

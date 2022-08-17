@@ -6,13 +6,13 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import me.bytebeats.ipp.sortxml.action.AbstractSortXmlAction;
-import me.bytebeats.ipp.sortxml.dialog.SortOptionDialog;
+import me.bytebeats.ipp.sortxml.action.AbstractXmlResourcesAction;
+import me.bytebeats.ipp.sortxml.dialog.XmlResourcesOptionDialog;
 import org.jetbrains.annotations.NotNull;
 
 import static me.bytebeats.ipp.sortxml.VirtualFilesKt.isXmlResourcesFile;
 
-public class SortXmlAction extends AbstractSortXmlAction {
+public class XmlResourcesAction extends AbstractXmlResourcesAction {
 
     @Override
     public void update(@NotNull AnActionEvent e) {
@@ -26,7 +26,7 @@ public class SortXmlAction extends AbstractSortXmlAction {
         final Project project = getEventProject(e);
         final Editor editor = e.getData(PlatformDataKeys.EDITOR);
         if (project == null || editor == null) return;
-        SortOptionDialog dialog = new SortOptionDialog(project);
+        XmlResourcesOptionDialog dialog = new XmlResourcesOptionDialog(project);
         if (!dialog.showAndGet()) return;
         // options
         boolean insertSpaceEnabled = dialog.isInsertSpaceEnabled();

@@ -58,7 +58,7 @@ fun Document.toNodeList(): List<CommentedNode> {
             }
             comments.add(node)
         } else {
-            list.add(CommentedNode(node, comments!!))
+            list.add(CommentedNode(node, comments))
             comments = null
         }
     }
