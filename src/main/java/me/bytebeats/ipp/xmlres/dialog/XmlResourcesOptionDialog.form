@@ -13,7 +13,7 @@
           <grid row="0" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Insert space between different prefixes"/>
+          <text value="Insert spaces between diff prefixes"/>
         </properties>
       </component>
       <component id="ce9ed" class="javax.swing.JCheckBox" binding="mInsertXmlInfoCheckBox">
@@ -26,7 +26,7 @@
       </component>
       <component id="96cd4" class="javax.swing.JLabel">
         <constraints>
-          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="3" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Indent"/>
@@ -40,7 +40,7 @@
           <model/>
         </properties>
       </component>
-      <component id="898cc" class="javax.swing.JCheckBox" binding="mDeleteCommentCheckBox">
+      <component id="898cc" class="javax.swing.JCheckBox" binding="mDeleteCommentsCheckBox">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -53,20 +53,12 @@
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value=" Where to separate prefixes"/>
+          <text value="Where to separate prefixes"/>
         </properties>
       </component>
       <component id="1915c" class="javax.swing.JComboBox" binding="mPrefixSpaceLocationComboBox">
         <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model/>
-        </properties>
-      </component>
-      <component id="c0599" class="javax.swing.JComboBox" binding="mInputCaseComboBox">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model/>
@@ -86,6 +78,22 @@
         </constraints>
         <properties>
           <text value="Case sensitive when comparing"/>
+        </properties>
+      </component>
+      <component id="ab696" class="javax.swing.JLabel" binding="mNamingStyleLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Naming Style"/>
+        </properties>
+      </component>
+      <component id="c0599" class="javax.swing.JComboBox" binding="mNamingStyleComboBox">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model/>
         </properties>
       </component>
     </children>
