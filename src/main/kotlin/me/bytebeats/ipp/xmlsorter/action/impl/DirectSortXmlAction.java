@@ -18,16 +18,15 @@ public class DirectSortXmlAction extends AbstractSortXmlAction {
         if (project == null || editor == null) {
             return;
         }
-        SortOptionDialog dialog = new SortOptionDialog(project);
         PropertiesComponent pc = PropertiesComponent.getInstance();
         execute(project,
                 editor,
                 pc.getInt(SortOptionDialog.PC_KEY_INPUT_CASE, 0) == 0,
-                dialog.getPrefixSpaceLocationValueAt(pc.getInt(SortOptionDialog.PC_KEY_PREFIX_SPACE_LOCATION, 0)),
+                SortOptionDialog.getPrefixSpaceLocationValueAt(pc.getInt(SortOptionDialog.PC_KEY_PREFIX_SPACE_LOCATION, 0)),
                 pc.getBoolean(SortOptionDialog.PC_KEY_SPACE_BETWEEN_PREFIX, true),
                 pc.getBoolean(SortOptionDialog.PC_KEY_INSERT_XML_INFO, true),
                 pc.getBoolean(SortOptionDialog.PC_KEY_DELETE_COMMENT, false),
-                dialog.getIndentValueAt(pc.getInt(SortOptionDialog.PC_KEY_INDENT, 1)),
+                SortOptionDialog.getIndentValueAt(pc.getInt(SortOptionDialog.PC_KEY_INDENT, 1)),
                 pc.getBoolean(SortOptionDialog.PC_KEY_SEPARATE_NON_TRANSLATABLE, false)
         );
     }

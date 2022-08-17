@@ -10,6 +10,10 @@ import java.awt.event.ActionListener;
 
 public class SortOptionDialog extends DialogWrapper {
 
+    private static final String[] INPUT_CASES = {"Snake Case", "Camel Case"};
+    private static final String[] PREFIX_SPACE_LOCATIONS = {"1", "2", "3", "4"};
+    private static final String[] INDENTS = {"2", "4", "8", "12"};
+
     private static final String TITLE = "Sort Xml Resource Option";
     private static final String OK_BUTTON_TEXT = "Sort";
 
@@ -42,10 +46,13 @@ public class SortOptionDialog extends DialogWrapper {
     private void initComponent() {
         PropertiesComponent pc = PropertiesComponent.getInstance();
         mInsertSpaceCheckBox.setSelected(pc.getBoolean(PC_KEY_SPACE_BETWEEN_PREFIX, true));
+        mInputCaseComboBox.setModel(new DefaultComboBoxModel<>(INPUT_CASES));
         mInputCaseComboBox.setSelectedIndex(pc.getInt(PC_KEY_INPUT_CASE, 0));
+        mPrefixSpaceLocationComboBox.setModel(new DefaultComboBoxModel<>(PREFIX_SPACE_LOCATIONS));
         mPrefixSpaceLocationComboBox.setSelectedIndex(pc.getInt(PC_KEY_PREFIX_SPACE_LOCATION, 0));
         mInsertXmlInfoCheckBox.setSelected(pc.getBoolean(PC_KEY_INSERT_XML_INFO, true));
         mDeleteCommentCheckBox.setSelected(pc.getBoolean(PC_KEY_DELETE_COMMENT, false));
+        mIndentComboBox.setModel(new DefaultComboBoxModel<>(INDENTS));
         mIndentComboBox.setSelectedIndex(pc.getInt(PC_KEY_INDENT, 1));
         mSeparateNonTranslatableCheckBox.setSelected(pc.getBoolean(PC_KEY_SEPARATE_NON_TRANSLATABLE, false));
 
@@ -77,9 +84,6 @@ public class SortOptionDialog extends DialogWrapper {
         return getPrefixSpaceLocationValueAt(mPrefixSpaceLocationComboBox.getSelectedIndex());
     }
 
-    public int getPrefixSpaceLocationValueAt(int index) {
-        return Integer.parseInt(mPrefixSpaceLocationComboBox.getItemAt(index));
-    }
 
     public boolean isInsertXmlInfoEnabled() {
         return mInsertXmlInfoCheckBox.isSelected();
@@ -91,10 +95,6 @@ public class SortOptionDialog extends DialogWrapper {
 
     public int getIndent() {
         return getIndentValueAt(mIndentComboBox.getSelectedIndex());
-    }
-
-    public int getIndentValueAt(int index) {
-        return Integer.parseInt(mIndentComboBox.getItemAt(index));
     }
 
     public boolean isSeparateNonTranslatableStringsEnabled() {
@@ -116,6 +116,14 @@ public class SortOptionDialog extends DialogWrapper {
         pc.setValue(PC_KEY_DELETE_COMMENT, mDeleteCommentCheckBox.isSelected(), false);
         pc.setValue(PC_KEY_INDENT, mIndentComboBox.getSelectedIndex(), 1);
         pc.setValue(PC_KEY_SEPARATE_NON_TRANSLATABLE, mSeparateNonTranslatableCheckBox.isSelected(), false);
+    }
+
+    public static int getPrefixSpaceLocationValueAt(int index) {
+        return Integer.parseInt(PREFIX_SPACE_LOCATIONS[index]);
+    }
+
+    public static int getIndentValueAt(int index) {
+        return Integer.parseInt(INDENTS[index]);
     }
 
 }
