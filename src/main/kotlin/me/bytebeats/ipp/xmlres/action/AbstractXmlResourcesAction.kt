@@ -32,7 +32,7 @@ abstract class AbstractXmlResourcesAction : AnAction() {
         //get node list from document object
         var commentedNodes = document.toNodeList()
         //sort
-        commentedNodes.sortedWith(CommentedNode.Comparator(separateNonTranslatable))
+        commentedNodes = commentedNodes.sortedWith(CommentedNode.Comparator(separateNonTranslatable))
 //        commentedNodes.sortedBy { it.node.attributes.getNamedItem("name").textContent }
         document.deleteChildNodes()
 
