@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="27fa2" class="javax.swing.JCheckBox" binding="mInsertSpaceCheckBox">
+      <component id="27fa2" class="javax.swing.JCheckBox" binding="mInsertSpaceBetweenDiffPrefixCheckBox">
         <constraints>
           <grid row="0" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -48,15 +48,15 @@
           <text value="Delete comments"/>
         </properties>
       </component>
-      <component id="c291" class="javax.swing.JLabel" binding="mPrefixSpaceLocationLabel">
+      <component id="c291" class="javax.swing.JLabel" binding="mFirstNwordsAsPrefixLabel">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Where to separate prefixes"/>
+          <text value="Prefix: first N words"/>
         </properties>
       </component>
-      <component id="1915c" class="javax.swing.JComboBox" binding="mPrefixSpaceLocationComboBox">
+      <component id="1915c" class="javax.swing.JComboBox" binding="mFirstNwordsAsPrefixComboBox">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

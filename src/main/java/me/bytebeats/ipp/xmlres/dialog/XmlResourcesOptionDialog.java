@@ -28,13 +28,13 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
     public static final String PC_KEY_CASE_SENSITIVE = "PC_KEY_CASE_SENSITIVE";
 
     private JPanel mMainPanel;
-    private JCheckBox mInsertSpaceCheckBox;
+    private JCheckBox mInsertSpaceBetweenDiffPrefixCheckBox;
     private JComboBox<String> mNamingStyleComboBox;
-    private JComboBox<String> mPrefixSpaceLocationComboBox;
+    private JComboBox<String> mFirstNwordsAsPrefixComboBox;
     private JCheckBox mInsertXmlInfoCheckBox;
     private JCheckBox mDeleteCommentsCheckBox;
     private JComboBox<String> mIndentComboBox;
-    private JLabel mPrefixSpaceLocationLabel;
+    private JLabel mFirstNwordsAsPrefixLabel;
     private JCheckBox mSeparateNonTranslatableCheckBox;
     private JCheckBox mCaseSensitiveCheckBox;
     private JLabel mNamingStyleLabel;
@@ -49,14 +49,14 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
 
     private void initComponent() {
         JComboBoxesKt.alignItemCenter(mNamingStyleComboBox);
-        JComboBoxesKt.alignItemCenter(mPrefixSpaceLocationComboBox);
+        JComboBoxesKt.alignItemCenter(mFirstNwordsAsPrefixComboBox);
         JComboBoxesKt.alignItemCenter(mIndentComboBox);
         PropertiesComponent pc = PropertiesComponent.getInstance();
-        mInsertSpaceCheckBox.setSelected(pc.getBoolean(PC_KEY_SPACE_BETWEEN_PREFIX, true));
+        mInsertSpaceBetweenDiffPrefixCheckBox.setSelected(pc.getBoolean(PC_KEY_SPACE_BETWEEN_PREFIX, true));
         mNamingStyleComboBox.setModel(new DefaultComboBoxModel<>(INPUT_CASES));
         mNamingStyleComboBox.setSelectedIndex(pc.getInt(PC_KEY_INPUT_CASE, 0));
-        mPrefixSpaceLocationComboBox.setModel(new DefaultComboBoxModel<>(PREFIX_SPACE_LOCATIONS));
-        mPrefixSpaceLocationComboBox.setSelectedIndex(pc.getInt(PC_KEY_PREFIX_SPACE_LOCATION, 0));
+        mFirstNwordsAsPrefixComboBox.setModel(new DefaultComboBoxModel<>(PREFIX_SPACE_LOCATIONS));
+        mFirstNwordsAsPrefixComboBox.setSelectedIndex(pc.getInt(PC_KEY_PREFIX_SPACE_LOCATION, 0));
         mInsertXmlInfoCheckBox.setSelected(pc.getBoolean(PC_KEY_INSERT_XML_INFO, true));
         mDeleteCommentsCheckBox.setSelected(pc.getBoolean(PC_KEY_DELETE_COMMENT, false));
         mIndentComboBox.setModel(new DefaultComboBoxModel<>(INDENTS));
@@ -65,12 +65,12 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
         mCaseSensitiveCheckBox.setSelected(pc.getBoolean(PC_KEY_CASE_SENSITIVE, true));
 
         ActionListener actionListener = actionEvent -> {
-            mNamingStyleComboBox.setEnabled(mInsertSpaceCheckBox.isSelected());
-            mPrefixSpaceLocationLabel.setEnabled(mInsertSpaceCheckBox.isSelected());
-            mNamingStyleLabel.setEnabled(mInsertSpaceCheckBox.isSelected());
-            mPrefixSpaceLocationComboBox.setEnabled(mInsertSpaceCheckBox.isSelected());
+            mNamingStyleComboBox.setEnabled(mInsertSpaceBetweenDiffPrefixCheckBox.isSelected());
+            mFirstNwordsAsPrefixLabel.setEnabled(mInsertSpaceBetweenDiffPrefixCheckBox.isSelected());
+            mNamingStyleLabel.setEnabled(mInsertSpaceBetweenDiffPrefixCheckBox.isSelected());
+            mFirstNwordsAsPrefixComboBox.setEnabled(mInsertSpaceBetweenDiffPrefixCheckBox.isSelected());
         };
-        mInsertSpaceCheckBox.addActionListener(actionListener);
+        mInsertSpaceBetweenDiffPrefixCheckBox.addActionListener(actionListener);
         // initial invoke
         actionListener.actionPerformed(null);
     }
@@ -82,7 +82,7 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
     }
 
     public boolean isInsertSpaceEnabled() {
-        return mInsertSpaceCheckBox.isSelected();
+        return mInsertSpaceBetweenDiffPrefixCheckBox.isSelected();
     }
 
     public boolean isSnakeCase() {
@@ -90,7 +90,7 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
     }
 
     public int getPrefixSpaceLocation() {
-        return getPrefixSpaceLocationValueAt(mPrefixSpaceLocationComboBox.getSelectedIndex());
+        return getPrefixSpaceLocationValueAt(mFirstNwordsAsPrefixComboBox.getSelectedIndex());
     }
 
 
@@ -122,9 +122,9 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
 
     public void save() {
         PropertiesComponent pc = PropertiesComponent.getInstance();
-        pc.setValue(PC_KEY_SPACE_BETWEEN_PREFIX, mInsertSpaceCheckBox.isSelected(), true);
+        pc.setValue(PC_KEY_SPACE_BETWEEN_PREFIX, mInsertSpaceBetweenDiffPrefixCheckBox.isSelected(), true);
         pc.setValue(PC_KEY_INPUT_CASE, mNamingStyleComboBox.getSelectedIndex(), 0);
-        pc.setValue(PC_KEY_PREFIX_SPACE_LOCATION, mPrefixSpaceLocationComboBox.getSelectedIndex(), 0);
+        pc.setValue(PC_KEY_PREFIX_SPACE_LOCATION, mFirstNwordsAsPrefixComboBox.getSelectedIndex(), 0);
         pc.setValue(PC_KEY_INSERT_XML_INFO, mInsertXmlInfoCheckBox.isSelected(), true);
         pc.setValue(PC_KEY_DELETE_COMMENT, mDeleteCommentsCheckBox.isSelected(), false);
         pc.setValue(PC_KEY_INDENT, mIndentComboBox.getSelectedIndex(), 1);
