@@ -38,7 +38,8 @@ public class XmlResourcesInstantAction extends AbstractXmlResourcesAction {
                 pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_INSERT_XML_INFO, true),
                 pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_DELETE_COMMENT, false),
                 XmlResourcesOptionDialog.getIndentValueAt(pc.getInt(XmlResourcesOptionDialog.PC_KEY_INDENT, 1)),
-                pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_SEPARATE_NON_TRANSLATABLE, false)
+                pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_SEPARATE_NON_TRANSLATABLE, false),
+                pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_CASE_SENSITIVE, true)
         );
     }
 }

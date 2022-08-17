@@ -18,9 +18,10 @@ abstract class AbstractXmlResourcesAction : AnAction() {
         insertXmlEncoding: Boolean,
         deleteComment: Boolean,
         indent: Int,
-        separateNonTranslatable: Boolean
+        separateNonTranslatable: Boolean,
+        isCaseSensitive: Boolean
     ) {
-        //content
+        //content, remove \n between resources items
         val simplifiedContent = editor.document.text.replace(">\n*\\s+?<".toRegex(), "><")
         val document: Document
         try {
@@ -32,8 +33,7 @@ abstract class AbstractXmlResourcesAction : AnAction() {
         //get node list from document object
         var commentedNodes = document.toNodeList()
         //sort
-        commentedNodes = commentedNodes.sortedWith(CommentedNode.Comparator(separateNonTranslatable))
-//        commentedNodes.sortedBy { it.node.attributes.getNamedItem("name").textContent }
+        commentedNodes = commentedNodes.sortedWith(CommentedNode.Comparator(separateNonTranslatable, isCaseSensitive))
         document.deleteChildNodes()
 
         //insert space if enabled

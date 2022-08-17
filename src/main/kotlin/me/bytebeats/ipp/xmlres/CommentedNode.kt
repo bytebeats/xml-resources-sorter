@@ -3,7 +3,8 @@ package me.bytebeats.ipp.xmlres
 import org.w3c.dom.Node
 
 data class CommentedNode(val node: Node, val comments: List<Node>?) {
-    internal class Comparator(private val separateNonTranslatable: Boolean) : kotlin.Comparator<CommentedNode> {
+    internal class Comparator(private val separateNonTranslatable: Boolean, private val isCaseSensitive: Boolean) :
+        kotlin.Comparator<CommentedNode> {
         override fun compare(o1: CommentedNode, o2: CommentedNode): Int {
             val node1 = o1.node
             val node2 = o2.node
@@ -17,20 +18,20 @@ data class CommentedNode(val node: Node, val comments: List<Node>?) {
                 val attribute1 = node1.attributes
                 val attribute2 = node2.attributes
                 if (separateNonTranslatable) {
-                    val transItem1 = attribute1.getNamedItem(TRANSLATABLE)
-                    val transItem2 = attribute2.getNamedItem(TRANSLATABLE)
-                    val isTranslatable1 = transItem1?.textContent?.equals(true.toString()).orFalse()
-                    val isTranslatable2 = transItem2?.textContent?.equals(true.toString()).orFalse()
-                    if (isTranslatable1 && !isTranslatable2) {
+                    val translatableItem1 = attribute1.getNamedItem(TRANSLATABLE)
+                    val translatableItem2 = attribute2.getNamedItem(TRANSLATABLE)
+                    val translatable1 = translatableItem1?.textContent?.equals(true.toString()).orFalse()
+                    val translatable2 = translatableItem2?.textContent?.equals(true.toString()).orFalse()
+                    if (translatable1 && !translatable2) {
                         return -1
-                    } else if (!isTranslatable1 && isTranslatable2) {
+                    } else if (!translatable1 && translatable2) {
                         return 1
                     }
-
                 }
                 val attributeValue1 = attribute1.getNamedItem(NAME).textContent
                 val attributeValue2 = attribute2.getNamedItem(NAME).textContent
-                return attributeValue1.compareTo(attributeValue2)
+                return if (isCaseSensitive) attributeValue1.compareTo(attributeValue2)
+                else attributeValue1.lowercase().compareTo(attributeValue2.lowercase())
             }
         }
     }

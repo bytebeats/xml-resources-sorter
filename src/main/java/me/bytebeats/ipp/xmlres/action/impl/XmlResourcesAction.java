@@ -40,6 +40,7 @@ public class XmlResourcesAction extends AbstractXmlResourcesAction {
         boolean deleteCommentsEnabled = dialog.isDeleteCommentsEnabled();
         int indent = dialog.getIndent();
         boolean separateNonTranslatable = dialog.isSeparateNonTranslatableStringsEnabled();
+        boolean isCaseSensitive = dialog.isCaseSensitive();
         execute(project,
                 editor,
                 isSnakeCase,
@@ -48,6 +49,7 @@ public class XmlResourcesAction extends AbstractXmlResourcesAction {
                 insertXmlInfoEnabled,
                 deleteCommentsEnabled,
                 indent,
-                separateNonTranslatable);
+                separateNonTranslatable,
+                isCaseSensitive);
     }
 }

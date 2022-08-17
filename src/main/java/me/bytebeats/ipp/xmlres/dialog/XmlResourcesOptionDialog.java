@@ -24,6 +24,7 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
     public static final String PC_KEY_INPUT_CASE = "PC_KEY_INPUT_CASE";
     public static final String PC_KEY_INDENT = "PC_KEY_INDENT";
     public static final String PC_KEY_SEPARATE_NON_TRANSLATABLE = "PC_KEY_SEPARATE_NON_TRANSLATABLE";
+    public static final String PC_KEY_CASE_SENSITIVE = "PC_KEY_CASE_SENSITIVE";
 
     private JPanel mMainPanel;
     private JCheckBox mInsertSpaceCheckBox;
@@ -34,6 +35,7 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
     private JComboBox<String> mIndentComboBox;
     private JLabel mPrefixSpaceLocationLabel;
     private JCheckBox mSeparateNonTranslatableCheckBox;
+    private JCheckBox mCaseSensitiveCheckBox;
 
     public XmlResourcesOptionDialog(@Nullable Project project) {
         super(project, true);
@@ -55,6 +57,7 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
         mIndentComboBox.setModel(new DefaultComboBoxModel<>(INDENTS));
         mIndentComboBox.setSelectedIndex(pc.getInt(PC_KEY_INDENT, 1));
         mSeparateNonTranslatableCheckBox.setSelected(pc.getBoolean(PC_KEY_SEPARATE_NON_TRANSLATABLE, false));
+        mCaseSensitiveCheckBox.setSelected(pc.getBoolean(PC_KEY_CASE_SENSITIVE, true));
 
         ActionListener actionListener = actionEvent -> {
             mInputCaseComboBox.setEnabled(mInsertSpaceCheckBox.isSelected());
@@ -101,6 +104,10 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
         return mSeparateNonTranslatableCheckBox.isSelected();
     }
 
+    public boolean isCaseSensitive() {
+        return mCaseSensitiveCheckBox.isSelected();
+    }
+
     @Override
     protected void doOKAction() {
         save();
@@ -116,6 +123,7 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
         pc.setValue(PC_KEY_DELETE_COMMENT, mDeleteCommentCheckBox.isSelected(), false);
         pc.setValue(PC_KEY_INDENT, mIndentComboBox.getSelectedIndex(), 1);
         pc.setValue(PC_KEY_SEPARATE_NON_TRANSLATABLE, mSeparateNonTranslatableCheckBox.isSelected(), false);
+        pc.setValue(PC_KEY_CASE_SENSITIVE, mCaseSensitiveCheckBox.isSelected(), true);
     }
 
     public static int getPrefixSpaceLocationValueAt(int index) {
