@@ -7,7 +7,10 @@ import javax.xml.stream.XMLStreamConstants
 import javax.xml.stream.XMLStreamException
 import javax.xml.stream.XMLStreamReader
 
-internal fun VirtualFile?.isResourceFile(): Boolean {
+/**
+ * Is the root element of a xml file  resources?
+ */
+internal fun VirtualFile?.isXmlResourcesFile(): Boolean {
     if (this?.name?.endsWith(".xml") != true) return false
     var reader: XMLStreamReader? = null
     try {

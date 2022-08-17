@@ -10,7 +10,7 @@ import me.bytebeats.ipp.sortxml.action.AbstractSortXmlAction;
 import me.bytebeats.ipp.sortxml.dialog.SortOptionDialog;
 import org.jetbrains.annotations.NotNull;
 
-import static me.bytebeats.ipp.sortxml.VirtualFilesKt.isResourceFile;
+import static me.bytebeats.ipp.sortxml.VirtualFilesKt.isXmlResourcesFile;
 
 public class SortXmlAction extends AbstractSortXmlAction {
 
@@ -18,7 +18,7 @@ public class SortXmlAction extends AbstractSortXmlAction {
     public void update(@NotNull AnActionEvent e) {
         super.update(e);
         VirtualFile file = CommonDataKeys.VIRTUAL_FILE.getData(e.getDataContext());
-        e.getPresentation().setEnabledAndVisible(isResourceFile(file));
+        e.getPresentation().setEnabledAndVisible(isXmlResourcesFile(file));
     }
 
     @Override

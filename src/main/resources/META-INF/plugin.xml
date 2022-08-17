@@ -40,19 +40,18 @@
 
     </extensions>
     <actions>
-        <!--        <group id="AndroidXmlSortActionGroup" text="Sort Xml Actions" icon="AllIcons.FileTypes.Xml" compact="true"-->
-        <!--               description="Action Group to sort xml items alphabetically">-->
-        <!--            <add-to-group group-id="RefactoringMenu" anchor="first"/>-->
-        <action id="AndroidSortXmlAction" class="me.bytebeats.ipp.sortxml.action.impl.SortXmlAction"
-                text="Sort Xml by Name" description="Sort xml by name">
+        <group id="AndroidXmlSortActionGroup" class="me.bytebeats.ipp.sortxml.action.SortXmlActionGroup"
+               text="Sort Xml Actions" icon="AllIcons.FileTypes.Xml" popup="true"
+               description="Action Group to sort xml items alphabetically">
             <add-to-group group-id="RefactoringMenu" anchor="first"/>
-            <keyboard-shortcut first-keystroke="ctrl L" keymap="$default"/>
-        </action>
-        <action id="AndroidSortXmlInstantAction" class="me.bytebeats.ipp.sortxml.action.impl.SortXmlInstantAction"
-                text="Sort Xml by Name Instantly" description="Sort xml by name instantly">
-            <add-to-group group-id="RefactoringMenu" anchor="after" relative-to-action="AndroidSortXmlAction"/>
-            <keyboard-shortcut first-keystroke="ctrl shift L" keymap="$default"/>
-        </action>
-        <!--        </group>-->
+            <action id="AndroidSortXmlAction" class="me.bytebeats.ipp.sortxml.action.impl.SortXmlAction"
+                    text="Sort Xml by Name" description="Sort xml by name">
+                <keyboard-shortcut first-keystroke="ctrl L" keymap="$default"/>
+            </action>
+            <action id="AndroidSortXmlInstantAction" class="me.bytebeats.ipp.sortxml.action.impl.SortXmlInstantAction"
+                    text="Sort Xml by Name Instantly" description="Sort xml by name instantly">
+                <keyboard-shortcut first-keystroke="ctrl shift L" keymap="$default"/>
+            </action>
+        </group>
     </actions>
 </idea-plugin>
