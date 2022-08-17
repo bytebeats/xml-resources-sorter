@@ -22,8 +22,8 @@ Any xml file who matches below formats
 
 ## Visual Effect
 
-<img src="arts/popup_menu_inlet.png" height="50" width="250"/>
-<img src="arts/refactor_menu_inlet.png" height="50" width="250"/>
+<img src="arts/popup_menu_inlet.png" height="100" width="500"/>
+<img src="arts/refactor_menu_inlet.png" height="100" width="500"/>
 
 ## Keyboard shortcut
 
