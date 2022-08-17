@@ -13,7 +13,7 @@ abstract class AbstractXmlResourcesAction : AnAction() {
         project: Project,
         editor: Editor,
         isSnakeCase: Boolean,
-        prefixSpaceLocation: Int,
+        prefix1stNwords: Int,
         insertSpaceBetweenDiffPrefix: Boolean,
         insertXmlEncoding: Boolean,
         deleteComment: Boolean,
@@ -38,7 +38,7 @@ abstract class AbstractXmlResourcesAction : AnAction() {
 
         //insert space if enabled
         if (insertSpaceBetweenDiffPrefix) {
-            commentedNodes = document.insertSpaceBetweenDiffPrefix(commentedNodes, prefixSpaceLocation, isSnakeCase)
+            commentedNodes = document.insertSpaceBetweenDiffPrefix(commentedNodes, prefix1stNwords, isSnakeCase)
         }
 
         //append node into document with comments if enabled

@@ -86,7 +86,7 @@ fun Document.insertSpaceBetweenDiffPrefix(
         val prefix = try {
             if (isSnakeCase) {
                 if (!nameValue.contains("_")) {
-                    notifyError("namedItem \"$nameValue\" is not snake case")
+                    notifyInfo("namedItem \"$nameValue\" is not snake case")
                     nameValue
                 } else {
                     nameValue.split("_")[prefixLocation - 1]

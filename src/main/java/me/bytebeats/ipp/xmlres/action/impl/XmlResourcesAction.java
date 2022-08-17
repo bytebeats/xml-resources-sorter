@@ -31,12 +31,12 @@ public class XmlResourcesAction extends AbstractXmlResourcesAction {
         // options
         boolean insertSpaceEnabled = dialog.isInsertSpaceEnabled();
         boolean isSnakeCase = true;
-        int prefixSpaceLocation = 0;
+        int prefix1stNwords = 0;
         if (insertSpaceEnabled) {
             isSnakeCase = dialog.isSnakeCase();
-            prefixSpaceLocation = dialog.getPrefixSpaceLocation();
+            prefix1stNwords = dialog.getPrefix1stNwords();
         }
-        boolean insertXmlInfoEnabled = dialog.isInsertXmlInfoEnabled();
+        boolean insertXmlInfoEnabled = dialog.isInsertXmlHeaderEnabled();
         boolean deleteCommentsEnabled = dialog.isDeleteCommentsEnabled();
         int indent = dialog.getIndent();
         boolean separateNonTranslatable = dialog.isSeparateNonTranslatableStringsEnabled();
@@ -44,7 +44,7 @@ public class XmlResourcesAction extends AbstractXmlResourcesAction {
         execute(project,
                 editor,
                 isSnakeCase,
-                prefixSpaceLocation,
+                prefix1stNwords,
                 insertSpaceEnabled,
                 insertXmlInfoEnabled,
                 deleteCommentsEnabled,

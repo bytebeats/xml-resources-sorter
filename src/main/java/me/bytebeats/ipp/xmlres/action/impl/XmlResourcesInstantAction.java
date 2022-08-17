@@ -32,10 +32,10 @@ public class XmlResourcesInstantAction extends AbstractXmlResourcesAction {
         PropertiesComponent pc = PropertiesComponent.getInstance();
         execute(project,
                 editor,
-                pc.getInt(XmlResourcesOptionDialog.PC_KEY_INPUT_CASE, 0) == 0,
-                XmlResourcesOptionDialog.getPrefixSpaceLocationValueAt(pc.getInt(XmlResourcesOptionDialog.PC_KEY_PREFIX_SPACE_LOCATION, 0)),
+                pc.getInt(XmlResourcesOptionDialog.PC_KEY_NAMING_STYLE, 0) == 0,
+                XmlResourcesOptionDialog.getPrefix1stNwordsValueAt(pc.getInt(XmlResourcesOptionDialog.PC_KEY_PREFIX_1ST_N_WORDS, 0)),
                 pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_SPACE_BETWEEN_PREFIX, true),
-                pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_INSERT_XML_INFO, true),
+                pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_INSERT_XML_HEADER, true),
                 pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_DELETE_COMMENT, false),
                 XmlResourcesOptionDialog.getIndentValueAt(pc.getInt(XmlResourcesOptionDialog.PC_KEY_INDENT, 1)),
                 pc.getBoolean(XmlResourcesOptionDialog.PC_KEY_SEPARATE_NON_TRANSLATABLE, false),
