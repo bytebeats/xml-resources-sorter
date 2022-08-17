@@ -15,7 +15,7 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
     private static final String[] PREFIX_SPACE_LOCATIONS = {"1", "2", "3", "4"};
     private static final String[] INDENTS = {"2", "4", "8", "12"};
 
-    private static final String TITLE = "Sort Xml Option";
+    private static final String TITLE = "Xml Resources Option";
     private static final String OK_BUTTON_TEXT = "Sort";
 
     public static final String PC_KEY_PREFIX_1ST_N_WORDS = "PC_KEY_PREFIX_1ST_N_WORDS";
