@@ -1,1 +1,1 @@
-rootProject.name = "android-resource-sorter"
+rootProject.name = "android-xml-sorter"

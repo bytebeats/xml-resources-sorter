@@ -32,7 +32,6 @@
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
-    <!--    <depends>com.intellij.modules.platform</depends>-->
     <depends>com.intellij.modules.xml</depends>
 
     <!-- Extension points defined by the plugin.
@@ -51,7 +50,7 @@
         </action>
         <action id="AndroidSortXmlInstantAction" class="me.bytebeats.ipp.sortxml.action.impl.SortXmlInstantAction"
                 text="Sort Xml by Name Instantly" description="Sort xml by name instantly">
-            <add-to-group group-id="RefactoringMenu" anchor="first"/>
+            <add-to-group group-id="RefactoringMenu" anchor="after" relative-to-action="AndroidSortXmlAction"/>
             <keyboard-shortcut first-keystroke="ctrl shift L" keymap="$default"/>
         </action>
         <!--        </group>-->
