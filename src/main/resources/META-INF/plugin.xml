@@ -18,9 +18,9 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    An IntelliJ & Android Studio plugin to sort xml resources items alphabetically whose attributes have named item "name" <br>
+    An IntelliJ & Android Studio plugin to sort xml files who have "resources" element, in which items have the "name" attribute<br>
 
-    'Editor > PopupMenu(Right Click) > Refactor > Sort Xml Resources by Name'<br/>
+    'Refactor menu or PopupMenu(Right Click) > Refactor > Xml Resources Actions > Sort by Name'<br/>
     Or press **Option + [Shift] + S**(MacOS) and **Control + [Shift] + S**(Windows)<br/>
 
     Options<br/>
@@ -41,16 +41,16 @@
     </extensions>
     <actions>
         <group id="XmlResourcesActionGroup" class="me.bytebeats.ipp.xmlres.action.XmlResourcesActionGroup"
-               text="Sort Xml Resources Actions" icon="AllIcons.FileTypes.Xml" popup="true"
+               text="Xml Resources Actions" icon="AllIcons.FileTypes.Xml" popup="true"
                description="Action Group to sort xml items alphabetically">
             <add-to-group group-id="RefactoringMenu" anchor="first"/>
             <action id="XmlResourcesAction" class="me.bytebeats.ipp.xmlres.action.impl.XmlResourcesAction"
-                    text="Sort Xml Resources by Name" description="Sort xml resources by name">
+                    text="Sort by Name" description="Sort by name">
                 <keyboard-shortcut first-keystroke="alt S" keymap="$default"/>
             </action>
             <action id="XmlResourcesInstantAction"
                     class="me.bytebeats.ipp.xmlres.action.impl.XmlResourcesInstantAction"
-                    text="Sort Xml Resources by Name Instantly" description="Sort xml resources by name instantly">
+                    text="Sort by Name Instantly" description="Sort by name instantly">
                 <keyboard-shortcut first-keystroke="alt meta S" keymap="$default"/>
             </action>
         </group>

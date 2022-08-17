@@ -11,7 +11,7 @@ import me.bytebeats.ipp.xmlres.action.AbstractXmlResourcesAction;
 import me.bytebeats.ipp.xmlres.dialog.XmlResourcesOptionDialog;
 import org.jetbrains.annotations.NotNull;
 
-import static me.bytebeats.ipp.xmlres.VirtualFilesKt.isXmlResourcesFile;
+import static me.bytebeats.ipp.xmlres.util.VirtualFilesKt.isXmlResourcesFile;
 
 public class XmlResourcesInstantAction extends AbstractXmlResourcesAction {
 

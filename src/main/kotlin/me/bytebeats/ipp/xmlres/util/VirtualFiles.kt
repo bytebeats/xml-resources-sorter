@@ -1,4 +1,4 @@
-package me.bytebeats.ipp.xmlres
+package me.bytebeats.ipp.xmlres.util
 
 import com.intellij.openapi.vfs.VirtualFile
 import java.io.IOException
@@ -8,7 +8,7 @@ import javax.xml.stream.XMLStreamException
 import javax.xml.stream.XMLStreamReader
 
 /**
- * Is the root element of a xml file  resources?
+ * Does a xml file have "resources" element?
  */
 internal fun VirtualFile?.isXmlResourcesFile(): Boolean {
     if (this?.name?.endsWith(".xml") != true) return false

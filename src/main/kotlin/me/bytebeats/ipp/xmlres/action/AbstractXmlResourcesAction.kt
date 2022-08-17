@@ -5,6 +5,7 @@ import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
 import me.bytebeats.ipp.xmlres.*
+import me.bytebeats.ipp.xmlres.util.notifyError
 import org.w3c.dom.Document
 import java.io.IOException
 

@@ -7,7 +7,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 
-import static me.bytebeats.ipp.xmlres.VirtualFilesKt.isXmlResourcesFile;
+import static me.bytebeats.ipp.xmlres.util.VirtualFilesKt.isXmlResourcesFile;
 
 public class XmlResourcesActionGroup extends DefaultActionGroup {
     @Override

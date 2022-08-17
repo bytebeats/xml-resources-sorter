@@ -1,5 +1,6 @@
 package me.bytebeats.ipp.xmlres
 
+import me.bytebeats.ipp.xmlres.util.notifyInfo
 import org.w3c.dom.Document
 import org.w3c.dom.Element
 import org.w3c.dom.Node
