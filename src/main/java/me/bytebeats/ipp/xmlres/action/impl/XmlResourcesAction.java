@@ -36,7 +36,7 @@ public class XmlResourcesAction extends AbstractXmlResourcesAction {
             isSnakeCase = dialog.isSnakeCase();
             prefix1stNwords = dialog.getPrefix1stNwords();
         }
-        boolean insertXmlInfoEnabled = dialog.isInsertXmlHeaderEnabled();
+        boolean insertXmlHeaderEnabled = dialog.isInsertXmlHeaderEnabled();
         boolean deleteCommentsEnabled = dialog.isDeleteCommentsEnabled();
         int indent = dialog.getIndent();
         boolean separateNonTranslatable = dialog.isSeparateNonTranslatableStringsEnabled();
@@ -46,7 +46,7 @@ public class XmlResourcesAction extends AbstractXmlResourcesAction {
                 isSnakeCase,
                 prefix1stNwords,
                 insertSpaceEnabled,
-                insertXmlInfoEnabled,
+                insertXmlHeaderEnabled,
                 deleteCommentsEnabled,
                 indent,
                 separateNonTranslatable,

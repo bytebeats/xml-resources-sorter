@@ -1,6 +1,6 @@
-package me.bytebeats.ipp.xmlres
+package me.bytebeats.ipp.xmlres.util
 
-import me.bytebeats.ipp.xmlres.util.notifyInfo
+import me.bytebeats.ipp.xmlres.CommentedNode
 import org.w3c.dom.Document
 import org.w3c.dom.Element
 import org.w3c.dom.Node
@@ -17,11 +17,13 @@ import javax.xml.transform.TransformerFactory
 import javax.xml.transform.dom.DOMSource
 import javax.xml.transform.stream.StreamResult
 
+private const val CHARSET_NAME = "UTF-8"
+
 @Throws(Exception::class)
 fun String.toDocument(): Document {
     val factory = DocumentBuilderFactory.newInstance()
     val builder = factory.newDocumentBuilder()
-    return builder.parse(ByteArrayInputStream(this.toByteArray(Charset.forName("UTF-8"))))
+    return builder.parse(ByteArrayInputStream(this.toByteArray(Charset.forName(CHARSET_NAME))))
 }
 
 @Throws(IOException::class)
@@ -33,6 +35,7 @@ fun Document.toPrettyString(indent: Int, insertEncoding: Boolean): String {
             setOutputProperty(OutputKeys.INDENT, "yes")
             setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, if (!insertEncoding) "yes" else "no")
             setOutputProperty("{http://xml.apache.org/xslt}indent-amount", indent.toString())
+            setOutputProperty(OutputKeys.ENCODING, CHARSET_NAME)
         }
         val source = DOMSource(this)
         val writer = StringWriter()

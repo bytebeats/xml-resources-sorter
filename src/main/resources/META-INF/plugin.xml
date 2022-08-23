@@ -7,7 +7,7 @@
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>Xml Resources Sorter</name>
 
-    <idea-version since-build="191.0"/>
+    <idea-version since-build="191.*"/>
     <version>0.1.0</version>
 
 
@@ -32,6 +32,7 @@
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <!--    <depends>com.intellij.modules.platform</depends>-->
     <depends>com.intellij.modules.xml</depends>
 
     <!-- Extension points defined by the plugin.
@@ -48,8 +49,7 @@
                     text="Sort by Name" description="Sort by name">
                 <keyboard-shortcut first-keystroke="alt S" keymap="$default"/>
             </action>
-            <action id="XmlResourcesInstantAction"
-                    class="me.bytebeats.ipp.xmlres.action.impl.XmlResourcesInstantAction"
+            <action id="XmlResourcesInstantAction" class="me.bytebeats.ipp.xmlres.action.impl.XmlResourcesInstantAction"
                     text="Sort by Name Instantly" description="Sort by name instantly">
                 <keyboard-shortcut first-keystroke="alt meta S" keymap="$default"/>
             </action>
