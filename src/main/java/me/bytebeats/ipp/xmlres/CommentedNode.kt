@@ -4,8 +4,11 @@ import me.bytebeats.ipp.xmlres.util.orFalse
 import org.w3c.dom.Node
 
 data class CommentedNode(val node: Node, val comments: List<Node>?) {
-    internal class Comparator(private val separateNonTranslatable: Boolean, private val isCaseSensitive: Boolean) :
-        kotlin.Comparator<CommentedNode> {
+    internal class AttrNameComparator(
+        private val separateNonTranslatable: Boolean,
+        private val isCaseSensitive: Boolean
+    ) :
+        Comparator<CommentedNode> {
         override fun compare(o1: CommentedNode, o2: CommentedNode): Int {
             val node1 = o1.node
             val node2 = o2.node
@@ -29,10 +32,10 @@ data class CommentedNode(val node: Node, val comments: List<Node>?) {
                         return 1
                     }
                 }
-                val attributeValue1 = attribute1.getNamedItem(NAME).textContent
-                val attributeValue2 = attribute2.getNamedItem(NAME).textContent
-                return if (isCaseSensitive) attributeValue1.compareTo(attributeValue2)
-                else attributeValue1.lowercase().compareTo(attributeValue2.lowercase())
+                val attrNameValue1 = attribute1.getNamedItem(NAME).textContent
+                val attrNameValue2 = attribute2.getNamedItem(NAME).textContent
+                return if (isCaseSensitive) attrNameValue1.compareTo(attrNameValue2)
+                else attrNameValue1.lowercase().compareTo(attrNameValue2.lowercase())
             }
         }
     }

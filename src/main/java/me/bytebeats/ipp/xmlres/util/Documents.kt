@@ -36,6 +36,7 @@ fun Document.toPrettyString(indent: Int, insertEncoding: Boolean): String {
             setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, if (!insertEncoding) "yes" else "no")
             setOutputProperty("{http://xml.apache.org/xslt}indent-amount", indent.toString())
             setOutputProperty(OutputKeys.ENCODING, CHARSET_NAME)
+            setOutputProperty(OutputKeys.STANDALONE, "no")
         }
         val source = DOMSource(this)
         val writer = StringWriter()
@@ -62,6 +63,7 @@ fun Document.toNodeList(): List<CommentedNode> {
             }
             comments.add(node)
         } else {
+            //for nodes of "plurals" and "string-array", their childrenNodes in proper order, not sorting them.
             list.add(CommentedNode(node, comments))
             comments = null
         }

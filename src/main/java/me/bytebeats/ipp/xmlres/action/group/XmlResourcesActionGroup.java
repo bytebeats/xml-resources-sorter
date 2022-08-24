@@ -1,4 +1,4 @@
-package me.bytebeats.ipp.xmlres.action;
+package me.bytebeats.ipp.xmlres.action.group;
 
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;

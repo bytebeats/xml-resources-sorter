@@ -41,7 +41,7 @@
 
     </extensions>
     <actions>
-        <group id="XmlResourcesActionGroup" class="me.bytebeats.ipp.xmlres.action.XmlResourcesActionGroup"
+        <group id="XmlResourcesActionGroup" class="me.bytebeats.ipp.xmlres.action.group.XmlResourcesActionGroup"
                text="Xml Resources Actions" icon="AllIcons.FileTypes.Xml" popup="true"
                description="Action Group to sort xml items alphabetically">
             <add-to-group group-id="RefactoringMenu" anchor="first"/>
