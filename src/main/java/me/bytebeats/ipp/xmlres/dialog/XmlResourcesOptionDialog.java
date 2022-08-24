@@ -38,6 +38,7 @@ public class XmlResourcesOptionDialog extends DialogWrapper {
     private JCheckBox mSeparateNonTranslatableCheckBox;
     private JCheckBox mCaseSensitiveCheckBox;
     private JLabel mNamingStyleLabel;
+    private JLabel mEscapeWarningLabel;
 
     public XmlResourcesOptionDialog(@Nullable Project project) {
         super(project, true);
